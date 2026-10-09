@@ -1,6 +1,6 @@
 # Contributing to BeaverLink
 
-## Setup and commands
+## Setup and local commands (tests, lint)
 
 TBD once the stack is picked. Owner: TBD
 
@@ -18,3 +18,19 @@ TBD once the stack is picked. Owner: TBD
 
 - Review requested PRs in a timely manner.
 - Prefix optional suggestions with `nit:`. Everything else blocks merge.
+
+## Definition of Done
+
+- Meets the Projects item's acceptance criteria.
+- Tested manually; CI passes or the failure is justified in the PR.
+- Reviewed, approved, and merged into `dev`.
+- No secrets or real personal data in the diff.
+
+## Contribution Norms
+
+- Blocked or behind? Say so in the team channel the same day.
+- You own AI-generated code in your PR the same as code you typed.
+
+## Getting help
+
+Ask in the team channel (`TBD`). Scope questions go to the project partner.
