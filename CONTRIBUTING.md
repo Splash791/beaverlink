@@ -2,7 +2,7 @@
 
 ## Setup and local commands (tests, lint)
 
-TBD once the stack is picked. Owner: TBD
+See the README.md quickstart. Run `pytest` and `ruff check .` in `backend/` before opening a PR.
 
 ## Workflow
 
