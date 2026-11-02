@@ -37,7 +37,7 @@ None yet. Planned tables: users, profiles, events, surveys, matches. If embeddin
 
 ## Decisions Deferred on Purpose
 
-Each has an open RFC in `docs/rfcs/` (on its own branch until merged):
+Each has a proposed RFC, either in `docs/rfcs/` or in an open pull request:
 
 - Database host and login library (Supabase Postgres with Better Auth, proposed).
 - Profile data source and sign-in method (hybrid with swappable sources, proposed).
