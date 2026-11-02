@@ -10,10 +10,10 @@ This is the only risk register for BeaverLink. Risks are sorted with high-high f
 
 - **Statement:** if the partner does not give us an email to register the hosting accounts with, we cannot set up production in a way the partner owns, and the week 10 deployment may slip.
 - **Category:** Business
-- **Likelihood:** Medium, because the partner agreed to free cloud hosting on 2026-10-16 but the email has not been requested yet.
+- **Likelihood:** Low, because the partner agreed to free cloud hosting on 2026-10-16 and the email will be requested at the 2026-11-06 meeting.
 - **Impact:** High, because deployment is the fall milestone.
 - **Owner:** Benjamin Smithynunta
-- **Response:** ask the partner for the email this week, and pick the host so setup can start as soon as it arrives.
+- **Response:** ask the partner for the email at the 2026-11-06 meeting, and pick the host so setup can start as soon as it arrives.
 - **Trigger:** no email by 2026-11-08.
 
 ### R2. No data-use terms
@@ -91,7 +91,7 @@ This is the only risk register for BeaverLink. Risks are sorted with high-high f
 | Prerequisite | Needed for | Owner | Asked of | Asked or start-by | Status |
 | --- | --- | --- | --- | --- | --- |
 | Agreement to host on free cloud plans | Week 10 deployment | Whole team | OSU Alumni Association (partner) | Asked 2026-10-16 (in-person meeting) | Agreed |
-| Partner email to register hosting accounts | Week 10 deployment | Benjamin Smithynunta | OSU Alumni Association (partner) | Start by 2026-11-08 | Not yet asked |
+| Partner email to register hosting accounts | Week 10 deployment | Benjamin Smithynunta | OSU Alumni Association (partner) | Will ask at the partner meeting on 2026-11-06 | Not yet asked |
 | Data-use terms for student and alumni data | Any real data | Andy Nguyen | OSU Alumni Association (partner) | Start by 2026-11-29 | Open |
 | OSU enables Graduway API access | Profile import | Andy Nguyen | OSU Connections admin (via Gravyty contact) | Asked 2026-10-22 | In progress; early answers suggest the API lacks the fields matching needs |
 | Gravyty legal approval to store profile data | Profile import | Andy Nguyen | Gravyty | Asked 2026-10-22 | Pending |
