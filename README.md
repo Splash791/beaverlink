@@ -9,7 +9,7 @@ Status: backend scaffold only (`GET /health`). See [docs/requirements.md](docs/r
 Needs Git and Python 3.10 or newer.
 
 ```bash
-git clone git@github.com:Splash791/beaverlink.git
+git clone https://github.com/Splash791/beaverlink.git
 cd beaverlink/backend
 python3 -m venv .venv
 source .venv/bin/activate
