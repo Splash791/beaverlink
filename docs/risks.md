@@ -99,4 +99,4 @@ This is the only risk register for BeaverLink. Risks are sorted with high-high f
 ## Staging and Rollback Plan
 
 - **Staging (where changes are tried before users see them):** every PR runs CI and is tested locally. Once the host is picked, the host gets two environments: `dev` deploys to staging, and `main` deploys to production after it is checked on staging. Owner: Benjamin Smithynunta. Lands by 2026-11-22 (fall week 8).
-- **Rollback (how a bad change is undone):** revert the merge on `main` with a PR and redeploy the previous build. Schema changes ship as migrations with a tested down step. Owner: Benjamin Smithynunta. Lands by 2026-11-22 (fall week 8).
+- **Rollback (how a bad change is undone):** use the host's rollback to the previous production deployment (both Vercel and Cloudflare offer one), then revert the merge on `main` with a PR so the code matches. Schema changes ship as migrations with a tested down step. Owner: Benjamin Smithynunta. Lands by 2026-11-22 (fall week 8).

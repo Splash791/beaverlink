@@ -45,7 +45,7 @@ None yet. Planned tables: users, profiles, events, surveys, matches. If embeddin
 
 ## Deployment
 
-**Production target.** The walking skeleton (sign in, fill a profile, see one ranked match list) will run as a hosted web app serving requests at a public URL by fall week 10. It runs on free cloud plans, with managed PostgreSQL (Supabase is proposed in an open RFC), so it does not wait on OSU hosting. The partner, the OSU Alumni Association, agreed to free cloud hosting when the whole team asked at the in-person meeting on 2026-10-16. The accounts are registered to an email the partner provides, so the partner owns them and the team has access during the project. That email has not been requested yet (see `docs/risks.md`). The specific host is not picked yet. Owner: Benjamin Smithynunta, by 2026-11-08.
+**Production target.** The walking skeleton (sign in, fill a profile, see one ranked match list) will run as a hosted web app serving requests at a public URL by fall week 10. It runs on free cloud plans, with managed PostgreSQL (Supabase is proposed in an open RFC), so it does not wait on OSU hosting. The partner, the OSU Alumni Association, agreed to free cloud hosting when the whole team asked at the in-person meeting on 2026-10-16. The accounts are registered to an email the partner provides, so the partner owns them and the team has access during the project. That email has not been requested yet (see `docs/risks.md`). The specific host is not picked yet; the free plans under consideration are Vercel and Cloudflare. Owner: Benjamin Smithynunta, by 2026-11-08.
 
 **Today.** The backend runs only locally (see README.md). Staging and rollback are planned in `docs/risks.md`.
 
@@ -59,6 +59,6 @@ Each has a proposed RFC, either in `docs/rfcs/` or in an open pull request:
 
 ## Open Technical Questions
 
-- Which free host can run FastAPI, and a Node auth service next to it if Better Auth is chosen?
+- Can Vercel or Cloudflare's free plan run FastAPI, and a Node auth service next to it if Better Auth is chosen?
 - Which OAuth providers can alumni use (Google, LinkedIn, OSU)?
 - Does the CI Postgres image need extra extensions once migrations exist?
