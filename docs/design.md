@@ -6,14 +6,28 @@ A FastAPI backend scaffold in `backend/` with one endpoint, `GET /health`, and o
 
 ## Context
 
-Students and alumni use a web app before and during OSU Alumni Association events. The app talks to a backend that stores profiles and surveys and ranks matches. Later, profiles may also be filled from OSU Connections (Gravyty's Graduway API).
+Zoom level: system context (BeaverLink as one box).
+
+Students and alumni use BeaverLink before and during OSU Alumni Association events. Later, profiles may also be filled from OSU Connections (Gravyty's Graduway API).
 
 ```mermaid
 flowchart LR
-  U[Student or alum<br/>browser] --> FE[React frontend<br/>planned]
+  S[Student] --> BL[BeaverLink]
+  A[Alum] --> BL
+  ST[Alumni Association<br/>event staff] --> BL
+  BL -.later.-> GW[OSU Connections<br/>Graduway API]
+  BL -.sign-in.-> ID[Sign-in provider<br/>undecided]
+```
+
+## Containers
+
+Zoom level: containers (the parts inside BeaverLink).
+
+```mermaid
+flowchart LR
+  U[Browser] --> FE[React frontend<br/>planned]
   FE --> API[FastAPI backend<br/>scaffold exists]
   API --> DB[(PostgreSQL + pgvector<br/>planned)]
-  API -.later.-> GW[OSU Connections<br/>Graduway API]
   FE -.sign-in.-> AUTH[Auth service<br/>undecided]
 ```
 
@@ -27,13 +41,13 @@ Planned rule: all data goes through FastAPI; the frontend never queries the data
 
 ## Data Model
 
-None yet. Planned tables: users, profiles, events, surveys, matches. If embeddings are adopted, they go in a separate `profile_embeddings` table so they can be dropped without touching anything else.
+None yet. Planned tables: users, profiles, events, surveys, matches. If embeddings are adopted, they go in a separate `profile_embeddings` table so they can be dropped without touching anything else. Profiles and surveys are personal data (see `docs/requirements.md`, C-1).
 
 ## Deployment
 
-**Production target (not yet agreed).** The walking skeleton (sign in, fill a profile, see one ranked match list) is planned to run as a hosted web app serving requests at a public URL by fall week 10. The hosting provider is not decided: the options are OSU-provided hosting or a cloud host, with managed PostgreSQL (Supabase is proposed in an open RFC). The account owner after handoff is not decided; the team proposes the OSU Alumni Association owns it. The partner, the OSU Alumni Association, has not yet agreed this target. Owner for closing this: Benjamin Smithynunta.
+**Production target (not yet agreed).** The walking skeleton (sign in, fill a profile, see one ranked match list) will run as a hosted web app serving requests at a public URL by fall week 10. To avoid waiting on OSU, the team plans to host it on free cloud plans the team sets up, with managed PostgreSQL (Supabase is proposed in an open RFC). The specific host is not picked yet. The team owns the account during the project and proposes moving it to the OSU Alumni Association at handoff. The partner, the OSU Alumni Association, has not yet agreed this target. Owner for closing this: Benjamin Smithynunta, by 2026-11-08.
 
-**Today.** The backend runs only locally (see README.md). Staging, rollback, and their dates are planned in `docs/risks.md`.
+**Today.** The backend runs only locally (see README.md). Staging and rollback are planned in `docs/risks.md`.
 
 ## Decisions Deferred on Purpose
 
@@ -45,6 +59,6 @@ Each has a proposed RFC, either in `docs/rfcs/` or in an open pull request:
 
 ## Open Technical Questions
 
-- Where does production run, and can it host a Node auth service next to FastAPI?
+- Which free host can run FastAPI, and a Node auth service next to it if Better Auth is chosen?
 - Which OAuth providers can alumni use (Google, LinkedIn, OSU)?
 - Does the CI Postgres image need extra extensions once migrations exist?

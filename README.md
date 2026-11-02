@@ -21,6 +21,7 @@ Run the tests and lint (the same checks CI runs):
 ```bash
 pytest
 ruff check .
+ruff format --check .
 ```
 
 Start the API:
