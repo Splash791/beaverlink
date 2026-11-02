@@ -44,8 +44,9 @@ Limits the team did not choose:
 - **C-2 OSU Connections access.** Profile import from OSU Connections (Gravyty's Graduway platform) needs OSU to enable API access, and storing that data is pending Gravyty's legal review.
 - **C-3 Alumni sign-in.** ONID accounts are deactivated one year after graduation, so OSU login cannot be the only sign-in for alumni.
 - **C-4 AI tool rules.** The team charter bans sharing real student or alumni data and credentials with AI tools.
-- **C-5 Schedule.** The walking skeleton must be deployed by fall week 10, and the project hands off to the partner after winter term.
-- **C-6 LinkedIn terms.** LinkedIn prohibits scraping, so we may only use Sign In with LinkedIn and exports users upload themselves.
+- **C-5 Hosting accounts.** Production runs on free cloud plans registered to an email the partner provides, as agreed with the partner on 2026-10-16.
+- **C-6 Schedule.** The walking skeleton must be deployed by fall week 10, and the project hands off to the partner after winter term.
+- **C-7 LinkedIn terms.** LinkedIn prohibits scraping, so we may only use Sign In with LinkedIn and exports users upload themselves.
 
 ## Success Metrics
 
@@ -67,7 +68,7 @@ Each question is owned by whoever raised it. The owner gets the answer or brings
 
 | Question | Owner | Answer by |
 | --- | --- | --- |
-| Where will production run, and who owns the account after handoff? | Benjamin Smithynunta | 2026-11-08 |
+| Which free cloud host runs production? | Benjamin Smithynunta | 2026-11-08 |
 | How must alumni sign in? | Andy Nguyen | 2026-11-15 |
 | Will OSU enable the Graduway API, and may we store the data it returns? | Andy Nguyen | 2026-11-29 |
 | Which profile fields can the Graduway API read? | Andy Nguyen | 2026-11-29 |

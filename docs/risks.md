@@ -6,15 +6,15 @@ This is the only risk register for BeaverLink. Risks are sorted with high-high f
 
 ## Risks
 
-### R1. Production target not agreed
+### R1. No partner email for hosting accounts
 
-- **Statement:** if the partner does not agree a production host and account owner, the week 10 deployment may slip or have to move later.
+- **Statement:** if the partner does not give us an email to register the hosting accounts with, we cannot set up production in a way the partner owns, and the week 10 deployment may slip.
 - **Category:** Business
-- **Likelihood:** High, because no host is picked yet.
+- **Likelihood:** Medium, because the partner agreed to free cloud hosting on 2026-10-16 but the email has not been requested yet.
 - **Impact:** High, because deployment is the fall milestone.
 - **Owner:** Benjamin Smithynunta
-- **Response:** pick a free cloud host the team controls and get the partner's OK on it.
-- **Trigger:** no partner agreement by 2026-11-08.
+- **Response:** ask the partner for the email this week, and pick the host so setup can start as soon as it arrives.
+- **Trigger:** no email by 2026-11-08.
 
 ### R2. No data-use terms
 
@@ -30,7 +30,7 @@ This is the only risk register for BeaverLink. Risks are sorted with high-high f
 
 - **Statement:** if OSU does not enable the Graduway API, or Gravyty legal does not allow storing its data, profiles cannot be imported.
 - **Category:** Technical
-- **Likelihood:** Medium, because the API exists but needs OSU setup and legal review.
+- **Likelihood:** High, because early answers suggest the API returns job title and company but not the fields matching needs.
 - **Impact:** Medium, because manual profile entry still works.
 - **Owner:** Andy Nguyen
 - **Response:** build manual entry first; the API is an optional source (RFC: profile data source).
@@ -90,9 +90,10 @@ This is the only risk register for BeaverLink. Risks are sorted with high-high f
 
 | Prerequisite | Needed for | Owner | Asked of | Asked or start-by | Status |
 | --- | --- | --- | --- | --- | --- |
-| Agreement on production host and account owner | Week 10 deployment | Benjamin Smithynunta | OSU Alumni Association (partner) | Start by 2026-11-08 | Open |
+| Agreement to host on free cloud plans | Week 10 deployment | Whole team | OSU Alumni Association (partner) | Asked 2026-10-16 (in-person meeting) | Agreed |
+| Partner email to register hosting accounts | Week 10 deployment | Benjamin Smithynunta | OSU Alumni Association (partner) | Start by 2026-11-08 | Not yet asked |
 | Data-use terms for student and alumni data | Any real data | Andy Nguyen | OSU Alumni Association (partner) | Start by 2026-11-29 | Open |
-| OSU enables Graduway API access | Profile import | Andy Nguyen | OSU Connections admin (via Gravyty contact) | Asked 2026-10-22 | Pending; admin not yet identified |
+| OSU enables Graduway API access | Profile import | Andy Nguyen | OSU Connections admin (via Gravyty contact) | Asked 2026-10-22 | In progress; early answers suggest the API lacks the fields matching needs |
 | Gravyty legal approval to store profile data | Profile import | Andy Nguyen | Gravyty | Asked 2026-10-22 | Pending |
 
 ## Staging and Rollback Plan

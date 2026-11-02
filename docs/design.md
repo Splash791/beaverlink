@@ -45,7 +45,7 @@ None yet. Planned tables: users, profiles, events, surveys, matches. If embeddin
 
 ## Deployment
 
-**Production target (not yet agreed).** The walking skeleton (sign in, fill a profile, see one ranked match list) will run as a hosted web app serving requests at a public URL by fall week 10. To avoid waiting on OSU, the team plans to host it on free cloud plans the team sets up, with managed PostgreSQL (Supabase is proposed in an open RFC). The specific host is not picked yet. The team owns the account during the project and proposes moving it to the OSU Alumni Association at handoff. The partner, the OSU Alumni Association, has not yet agreed this target. Owner for closing this: Benjamin Smithynunta, by 2026-11-08.
+**Production target.** The walking skeleton (sign in, fill a profile, see one ranked match list) will run as a hosted web app serving requests at a public URL by fall week 10. It runs on free cloud plans, with managed PostgreSQL (Supabase is proposed in an open RFC), so it does not wait on OSU hosting. The partner, the OSU Alumni Association, agreed to free cloud hosting when the whole team asked at the in-person meeting on 2026-10-16. The accounts are registered to an email the partner provides, so the partner owns them and the team has access during the project. That email has not been requested yet (see `docs/risks.md`). The specific host is not picked yet. Owner: Benjamin Smithynunta, by 2026-11-08.
 
 **Today.** The backend runs only locally (see README.md). Staging and rollback are planned in `docs/risks.md`.
 
