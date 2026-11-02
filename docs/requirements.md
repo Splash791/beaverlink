@@ -45,7 +45,7 @@ Limits the team did not choose:
 - **C-3 Alumni sign-in.** ONID accounts are deactivated one year after graduation, so OSU login cannot be the only sign-in for alumni.
 - **C-4 AI tool rules.** The team charter bans sharing real student or alumni data and credentials with AI tools.
 - **C-5 Hosting accounts.** Production runs on free cloud plans registered to an email the partner provides, as agreed with the partner on 2026-10-16.
-- **C-6 Schedule.** The walking skeleton must be deployed by fall week 10, and the project hands off to the partner after winter term.
+- **C-6 Schedule.** The walking skeleton must be deployed by fall week 10, and the project hands off to the partner in spring week 8.
 - **C-7 LinkedIn terms.** LinkedIn prohibits scraping, so we may only use Sign In with LinkedIn and exports users upload themselves.
 
 ## Success Metrics
