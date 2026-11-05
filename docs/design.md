@@ -2,7 +2,7 @@
 
 ## What Exists at This Commit
 
-A FastAPI backend scaffold in `backend/` with one endpoint, `GET /health`, and one pytest test. There is no frontend, database schema, or login yet. CI (`.github/workflows/ci.yml`) runs `ruff` and `pytest` on every pull request to `dev` and `main`, and the frontend job is skipped until `frontend/package-lock.json` exists.
+A FastAPI backend scaffold in `backend/` with one endpoint, `GET /health`, and one pytest test. A Vite + React + TypeScript frontend in `frontend/` with a front-end-only demo login (hardcoded accounts in `src/auth/demoUsers.ts`, no backend integration or real authentication). There is no database schema yet, and no real login. CI (`.github/workflows/ci.yml`) runs `ruff` and `pytest` for the backend and `tsc`, `eslint`, Vitest, and `vite build` for the frontend, on every pull request to `dev` and `main`; the frontend job activates now that `frontend/package-lock.json` exists.
 
 ## Context
 
@@ -25,7 +25,7 @@ Zoom level: containers (the parts inside BeaverLink).
 
 ```mermaid
 flowchart LR
-  U[Browser] --> FE[React frontend<br/>planned]
+  U[Browser] --> FE[React frontend<br/>demo login only]
   FE --> API[FastAPI backend<br/>scaffold exists]
   API --> DB[(PostgreSQL + pgvector<br/>planned)]
   FE -.sign-in.-> AUTH[Auth service<br/>undecided]
