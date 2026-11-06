@@ -1,3 +1,4 @@
+import ProfilePage from './pages/ProfilePage.tsx'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from './pages/LoginPage'
 import { HomePage } from './pages/HomePage'
@@ -26,6 +27,7 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="/profile" element={<ProfilePage />} />
       {/* Unknown routes fall back to the root redirect. */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
