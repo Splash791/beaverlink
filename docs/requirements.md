@@ -1,6 +1,6 @@
 # BeaverLink Requirements
 
-Status at this commit: only the backend scaffold exists (`GET /health`). Everything marked *Planned* is not built yet. Priorities use MoSCoW (Must, Should, Could, Won't).
+Status at this commit: the backend scaffold (`GET /health`) and a frontend profile form that does not save yet. Everything marked *Planned* is not built yet. Priorities use MoSCoW (Must, Should, Could, Won't).
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ At OSU Alumni Association networking events, students and alumni do not know who
 | --- | --- | --- | --- | --- | --- |
 | FR-0 | The backend reports that it is up. | Must | Deploys and CI need a check that the server runs. | Done | CI test `backend/tests/test_health.py::test_health_returns_ok` |
 | FR-1 | A user can create an account and sign in. | Must | Profiles and matches belong to a person. | Planned | A new user signs up, signs out, and signs back in. Requests without a valid token get 401. Sign-in method is open (see RFCs). |
-| FR-2 | A user can create and edit their own profile (major or industry, job, goals). | Must | Matching has no input without profiles. | Planned | A user can read and edit only their own profile; editing another user's profile returns 403. |
+| FR-2 | A user can create and edit their own profile (students: year, major, goals; alumni: graduation year, industry, job, goals). | Must | Matching has no input without profiles. | In progress (form only, no saving or access checks) | A user can read and edit only their own profile; editing another user's profile returns 403. |
 | FR-3 | A user can fill out an event survey for an event they attend. | Must | Matches are per event and depend on what each person wants from it. | Planned | Survey answers are saved per user per event and can be edited until the event starts. |
 | FR-4 | A user sees a ranked list of people to meet at an event. | Must | This is the core feature. | Planned | Given seed profiles, the list is ordered by match score and excludes the user themself. |
 | FR-5 | Each recommendation explains why the two people matched. | Should | Explanations build trust, but a ranked list alone still works. | Planned | Each match shows per-feature scores that sum to its total score. |
