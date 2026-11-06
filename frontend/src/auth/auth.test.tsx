@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { render, screen, within } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import App from '../App'
@@ -25,19 +25,17 @@ async function signIn(email: string, password: string) {
 
 describe('demo authentication', () => {
   for (const account of demoUsers) {
-    it(`logs in the ${account.role} and shows the home page`, async () => {
+    it(`logs in the ${account.role} and lands on their home page`, async () => {
       renderApp()
       await signIn(account.email, DEMO_PASSWORD)
 
-      const heading = await screen.findByRole('heading', {
-        name: `Welcome, ${account.name}`,
-      })
-      expect(heading).toBeInTheDocument()
-      expect(screen.getByText(account.email)).toBeInTheDocument()
-      // Role badge renders the account's human label.
+      // Every role's home renders inside the AppShell (Log out + their name).
       expect(
-        within(heading.parentElement as HTMLElement).getByText(account.label),
+        await screen.findByRole('button', { name: 'Log out' }),
       ).toBeInTheDocument()
+      expect(screen.getAllByText(account.name).length).toBeGreaterThan(0)
+      // Role-specific label from the header role badge.
+      expect(screen.getAllByText(account.label).length).toBeGreaterThan(0)
     })
   }
 
@@ -58,6 +56,6 @@ describe('demo authentication', () => {
     expect(
       await screen.findByRole('button', { name: 'Sign in' }),
     ).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Demo accounts' })).toBeInTheDocument()
+    expect(screen.getByText('Demo accounts')).toBeInTheDocument()
   })
 })

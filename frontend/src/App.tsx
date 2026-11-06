@@ -1,19 +1,22 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from './pages/LoginPage'
 import { HomePage } from './pages/HomePage'
+import { PublicLanding } from './pages/PublicLanding'
 import { ProtectedRoute } from './auth/ProtectedRoute'
 import { useAuth } from './auth/useAuth'
 
-function RootRedirect() {
+// Logged-in visitors go straight to their home; everyone else sees the
+// public marketing landing.
+function RootRoute() {
   const { user, isLoading } = useAuth()
   if (isLoading) return null
-  return <Navigate to={user ? '/home' : '/login'} replace />
+  return user ? <Navigate to="/home" replace /> : <PublicLanding />
 }
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<RootRedirect />} />
+      <Route path="/" element={<RootRoute />} />
       <Route path="/login" element={<LoginPage />} />
       <Route
         path="/home"

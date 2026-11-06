@@ -12,21 +12,21 @@ export interface DemoAccount extends User {
 export const demoUsers: DemoAccount[] = [
   {
     id: 'u-student',
-    name: 'Sam Student',
+    name: 'Maya Thompson',
     email: 'student@oregonstate.edu',
     role: 'student',
     label: 'Student',
   },
   {
     id: 'u-alumnus',
-    name: 'Alex Alumni',
+    name: 'David Okafor',
     email: 'alumni@oregonstate.edu',
     role: 'alumnus',
     label: 'Alumnus',
   },
   {
     id: 'u-organizer',
-    name: 'Olivia Organizer',
+    name: 'Olivia Chen',
     email: 'organizer@oregonstate.edu',
     role: 'admin',
     label: 'Event organizer',
