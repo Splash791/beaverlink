@@ -32,6 +32,16 @@ uvicorn app.main:app --reload
 
 Then open http://127.0.0.1:8000/health. It should show `{"status":"ok"}`.
 
+## Local database
+
+Needs Docker and Node.js. From the repo root:
+
+```bash
+npx supabase start
+```
+
+This runs PostgreSQL 17 in Docker at `postgresql://postgres:postgres@127.0.0.1:54322/postgres`. Stop it with `npx supabase stop`.
+
 ## Frontend
 
 A Vite + React + TypeScript demo of the BeaverLink experience, using hardcoded
