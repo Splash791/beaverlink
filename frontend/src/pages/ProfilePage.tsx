@@ -8,6 +8,7 @@ type Profile = {
   graduationYear: string
   major: string
   industry: string
+  otherIndustry: string
   jobTitle: string
   goals: string[]
   goalDetails: string
@@ -21,6 +22,7 @@ const emptyProfile: Profile = {
   graduationYear: '',
   major: '',
   industry: '',
+  otherIndustry: '',
   jobTitle: '',
   goals: [],
   goalDetails: '',
@@ -93,6 +95,9 @@ function validate(profile: Profile): ProfileErrors {
       errors.graduationYear = 'Enter a valid four-digit year.'
     }
     if (!profile.industry) errors.industry = 'Choose your industry.'
+    if (profile.industry === 'Other' && !profile.otherIndustry.trim()) {
+      errors.otherIndustry = 'Enter your industry.'
+    }
   }
   if (profile.goals.length === 0) errors.goals = 'Choose at least one goal.'
 
@@ -200,6 +205,7 @@ function ProfilePage() {
                 id="major"
                 className={inputClass}
                 options={majors}
+                placeholder="Start typing or enter your own"
                 value={profile.major}
                 onChange={(value) => update('major', value)}
               />
@@ -225,6 +231,7 @@ function ProfilePage() {
                 id="major"
                 className={inputClass}
                 options={majors}
+                placeholder="Start typing or enter your own"
                 value={profile.major}
                 onChange={(value) => update('major', value)}
               />
@@ -245,6 +252,17 @@ function ProfilePage() {
                 ))}
               </select>
             </Field>
+
+            {profile.industry === 'Other' && (
+              <Field id="otherIndustry" label="Your industry" error={errors.otherIndustry}>
+                <input
+                  id="otherIndustry"
+                  className={inputClass}
+                  value={profile.otherIndustry}
+                  onChange={(event) => update('otherIndustry', event.target.value)}
+                />
+              </Field>
+            )}
 
             <Field id="jobTitle" label="Job title (optional)">
               <input

@@ -122,6 +122,62 @@ describe('ProfilePage', () => {
     expect(screen.queryByRole('status')).toBeNull()
   })
 
+  it('shows the industry text box only when Other is selected', () => {
+    render(<ProfilePage />)
+    fillIn('I am a', 'alum')
+    expect(screen.queryByLabelText('Your industry')).toBeNull()
+
+    fillIn('Industry', 'Other')
+    expect(screen.getByLabelText('Your industry')).toBeTruthy()
+
+    fillIn('Industry', 'Healthcare')
+    expect(screen.queryByLabelText('Your industry')).toBeNull()
+  })
+
+  it('requires the industry text box when Other is selected', () => {
+    render(<ProfilePage />)
+    fillAlum()
+    fillIn('Industry', 'Other')
+    submit()
+
+    expect(screen.getByText('Enter your industry.')).toBeTruthy()
+    expect(screen.queryByRole('status')).toBeNull()
+
+    fillIn('Your industry', '   ')
+    submit()
+    expect(screen.getByText('Enter your industry.')).toBeTruthy()
+    expect(screen.queryByRole('status')).toBeNull()
+  })
+
+  it('accepts Other once an industry is typed', () => {
+    render(<ProfilePage />)
+    fillAlum()
+    fillIn('Industry', 'Other')
+    fillIn('Your industry', 'Aviation')
+    submit()
+
+    expect(screen.queryAllByRole('alert')).toHaveLength(0)
+    expect(screen.getByRole('status')).toBeTruthy()
+  })
+
+  it('ignores the industry text box after switching away from Other', () => {
+    render(<ProfilePage />)
+    fillAlum()
+    fillIn('Industry', 'Other')
+    fillIn('Industry', 'Healthcare')
+    submit()
+
+    expect(screen.queryAllByRole('alert')).toHaveLength(0)
+    expect(screen.getByRole('status')).toBeTruthy()
+  })
+
+  it('tells the user they can enter their own major', () => {
+    render(<ProfilePage />)
+    fillIn('I am a', 'student')
+
+    expect(screen.getByPlaceholderText('Start typing or enter your own')).toBeTruthy()
+  })
+
   it('filters major suggestions as the user types', () => {
     render(<ProfilePage />)
     fillIn('I am a', 'student')

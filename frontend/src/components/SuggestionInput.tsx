@@ -5,11 +5,19 @@ type SuggestionInputProps = {
   value: string
   options: string[]
   className: string
+  placeholder?: string
   onChange: (value: string) => void
 }
 
 // Text input with a filtered list. Answers outside the list are still allowed.
-function SuggestionInput({ id, value, options, className, onChange }: SuggestionInputProps) {
+function SuggestionInput({
+  id,
+  value,
+  options,
+  className,
+  placeholder,
+  onChange,
+}: SuggestionInputProps) {
   const [open, setOpen] = useState(false)
   const [highlighted, setHighlighted] = useState(-1)
 
@@ -53,6 +61,7 @@ function SuggestionInput({ id, value, options, className, onChange }: Suggestion
         aria-controls={listId}
         aria-activedescendant={showList && highlighted >= 0 ? `${listId}-${highlighted}` : undefined}
         className={className}
+        placeholder={placeholder}
         value={value}
         onChange={(event) => {
           onChange(event.target.value)
