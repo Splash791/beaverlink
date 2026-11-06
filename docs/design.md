@@ -2,7 +2,9 @@
 
 ## What Exists at This Commit
 
-A FastAPI backend scaffold in `backend/` with one endpoint, `GET /health`, and one pytest test. A React frontend in `frontend/` shows a profile form that validates input but does not save it. There is no database schema or login yet. CI (`.github/workflows/ci.yml`) runs `ruff` and `pytest` for the backend, and type checks, lint, tests, and a build for the frontend, on every pull request to `dev` and `main`.
+A FastAPI backend scaffold in `backend/` with one endpoint, `GET /health`, and one pytest test. A Vite + React + TypeScript frontend in `frontend/` with a front-end-only demo login (hardcoded accounts in `src/auth/demoUsers.ts`) and a role-based demo experience: a public landing page, and per-role dashboards (student, alumnus, organizer) that illustrate the planned recommendation flow — ranked matches with per-factor "why" breakdowns, event check-ins, and organizer matching-health views. All of it runs on fake in-memory fixtures in `src/data/` (people, events, attendees, computed matches); there is no backend integration, no real authentication, and no database yet. CI (`.github/workflows/ci.yml`) runs `ruff` and `pytest` for the backend and `tsc`, `eslint`, Vitest, and `vite build` for the frontend, on every pull request to `dev` and `main`; the frontend job activates now that `frontend/package-lock.json` exists.
+
+The profile form at `/profile` validates student and alumni input but does not save it.
 
 ## Context
 
@@ -25,7 +27,7 @@ Zoom level: containers (the parts inside BeaverLink).
 
 ```mermaid
 flowchart LR
-  U[Browser] --> FE[React frontend<br/>profile form only]
+  U[Browser] --> FE[React frontend<br/>demo UI, mock data]
   FE --> API[FastAPI backend<br/>scaffold exists]
   API --> DB[(PostgreSQL + pgvector<br/>planned)]
   FE -.sign-in.-> AUTH[Auth service<br/>undecided]
