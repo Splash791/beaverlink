@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* BeaverLink brand tokens — OSU Beaver Orange with warm neutrals. */
+@theme {
+  --color-osu: #d73f09;
+  --color-osu-dark: #b4330a;
+  --color-osu-tint: #fbeae3;
+  --color-ink: #1c1917;
+  --color-paper: #faf8f5;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Themed browser surfaces so even the parts we didn't draw stay on-brand. */
+  ::selection {
+    background-color: var(--color-osu);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-osu);
+    outline-offset: 2px;
+  }
+}
